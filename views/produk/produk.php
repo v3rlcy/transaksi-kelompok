@@ -60,7 +60,7 @@ $dataProduk = query("SELECT * FROM tbproduk");
           <td><?= $data['hargaBeli'] ?></td>
           <td><?= $data['totalStok'] ?></td>
           <td>
-            <a class="btn btn-warning" href="edit.php?id=<?= $data['idProduk'] ?>">Edit Produk</a>
+            <a class="btn btn-warning" href="edit.php?id=<?= $data['idProduk'] ?>">Edit Produk</a> ||
             <a class="btn btn-danger" href="delete.php?id=<?= $data['idProduk'] ?>">Hapus Produk</a>
           </td>
 
