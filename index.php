@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <a href="views/produk/produk.php">Produk YfrfdrPS</a>
+  <a href="views/produk/produk.php">Produk YPS</a>
 </body>
 
 </html>
