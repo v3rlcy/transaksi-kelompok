@@ -8,6 +8,19 @@ function insertProduk($data)
 {
   global $conn;
 
+  $prefix = "P-";
+  $getId = mysqli_query($conn, "SELECT idProduk FROM tbproduk ORDER BY idProduk DESC LIMIT 1");
+  $id = mysqli_fetch_assoc($getId);
+  if (!$id) {
+    $id = "P-000";
+  } else {
+    $id = $id['idProduk'];
+  }
+  $currentId = (int)explode("-", $id)[1] + 1;
+
+  $idProduk = str_pad($currentId, 3, "0", STR_PAD_LEFT);
+  $idProduk = $prefix . $idProduk;
+
   $namaProduk = htmlspecialchars($data['namaProduk']);
   $kategori = htmlspecialchars($data['kategori']);
   $satuan = htmlspecialchars($data['satuan']);
@@ -15,7 +28,7 @@ function insertProduk($data)
   $hargaBeli = htmlspecialchars($data['hargaBeli']);
   $totalStok = htmlspecialchars($data['totalStok']);
 
-  $query = "INSERT INTO tbproduk VALUES ('', '$namaProduk', '$kategori', '$satuan', '$hargaJual', '$hargaBeli', '$totalStok')";
+  $query = "INSERT INTO tbproduk VALUES ('$idProduk', '$namaProduk', '$kategori', '$satuan', '$hargaJual', '$hargaBeli', '$totalStok')";
 
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
