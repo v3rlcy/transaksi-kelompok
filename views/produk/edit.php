@@ -71,7 +71,7 @@ if (isset($_POST["submit"])) {
       </li>
     </ul>
   </form>
-
+<a href="produk.php">kembali</a>
 </body>
 
 </html>

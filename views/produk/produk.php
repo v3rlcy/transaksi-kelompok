@@ -27,7 +27,7 @@ $dataProduk = query("SELECT * FROM tbproduk");
             <a class="nav-link active text-light" aria-current="page" href="../produk/produk.php">Produk</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">Transaksi</a>
+            <a class="nav-link text-light" href="../../index.php">Transaksi</a>
           </li>
         </ul>
       </div>

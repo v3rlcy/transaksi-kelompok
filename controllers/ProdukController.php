@@ -1,5 +1,20 @@
 <?php
-require '../../function.php';
+
+$conn = mysqli_connect('localhost', 'root', '', 'db_penjualan');
+
+function query($query)
+{
+  global $conn;
+  $result = mysqli_query($conn, $query);
+  $rows = [];
+
+  while ($row = mysqli_fetch_assoc($result)) {
+    $rows[] = $row;
+  }
+
+  return $rows;
+}
+
 
 /**
  * Insert barang
@@ -66,4 +81,18 @@ function editProduk($data)
 
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
+
+function dataProduk($cari)
+{
+  global $conn;
+  $query = "SELECT * FROM tbproduk WHERE 
+    idProduk LIKE '%$cari%' OR
+    namaProduk LIKE '%$cari%' OR
+    kategori LIKE '%$cari%' OR
+    hargaJual LIKE '%$cari%' 
+    ";
+  return mysqli_query($conn, $query);
+  return mysqli_affected_rows($conn);
+}
+
 }
