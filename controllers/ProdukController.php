@@ -66,7 +66,7 @@ function editProduk($data)
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
 
-function cari($keyword)
+function cari($keyword)  
 {
   global $conn;
   $query = "SELECT * FROM tbproduk WHERE 
