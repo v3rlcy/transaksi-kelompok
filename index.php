@@ -41,9 +41,7 @@ if (isset($_POST["cari"])) {
   <div class="container">
     <h1 class="mt-3">Welcome To JRV Mart Pontianak</h1>
     <p>See our product here <a href="views/produk/produk.php">Produk YPS</a></p>
-  </div>
 
-  <div class="container">
     <h4>List Barang</h4>
 
     <div class="form-group">
@@ -72,7 +70,7 @@ if (isset($_POST["cari"])) {
             <td><?= $row['namaProduk'] ?></td>
             <td><?= $row['kategori'] ?></td>
             <td><?= $row['hargaJual'] ?></td>
-            <td><a class="btn btn-success " href="">Add to Cart</a></td>
+            <td><a class="btn btn-success">Add To Cart</a></td>
           <?php endforeach; ?>
           </tr>
       </table>
@@ -80,14 +78,12 @@ if (isset($_POST["cari"])) {
   </div>
 
 
-
-  <div class>
+  <div>
     <tr>
       <td><b>Tanggal</b></td>
-      <td><input type="text" readonly="readonly" class="form-control" value="<?php echo date("j F Y, G:i"); ?>" name="tgl"></td>
+      <td><p><?php echo date("j F Y, G:i"); ?>"</p></td>
     </tr>
   </div>
 </body>
-
 
 </html>
