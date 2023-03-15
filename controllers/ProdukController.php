@@ -66,17 +66,16 @@ function editProduk($data)
   mysqli_query($conn, $query);
   return mysqli_affected_rows($conn);
 
-function dataProduk($cari)
+function cari($keyword)
 {
   global $conn;
   $query = "SELECT * FROM tbproduk WHERE 
-    idProduk LIKE '%$cari%' OR
-    namaProduk LIKE '%$cari%' OR
-    kategori LIKE '%$cari%' OR
-    hargaJual LIKE '%$cari%' 
+    idProduk LIKE '%$keyword%' OR
+    namaProduk LIKE '%$keyword%' OR
+    kategori LIKE '%$keyword%' OR
+    hargaJual LIKE '%$keyword%' 
     ";
-  return mysqli_query($conn, $query);
-  return mysqli_affected_rows($conn);
+  return query($query);
 }
 
 }
