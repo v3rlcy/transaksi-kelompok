@@ -2,11 +2,11 @@
 require '../../controllers/ProdukController.php';
 $dataProduk = query("SELECT * FROM tbproduk");
 
-$nama = $_GET["namaProduk"];
-$harga = $_GET["hargaJual"];
+// $nama = $_GET["namaProduk"];
+// $harga = $_GET["hargaJual"];
 
 if(isset($_POST["cari"])) {
-    $dataProduk = dataProduk($_POST["cari"]);
+    $dataProduk = cari($_POST["keyword"]);
 }
 ?>
 
@@ -54,7 +54,7 @@ if(isset($_POST["cari"])) {
                 <div class="row">
                     <div class="input-group mb-2">
                         <input type="text" name="cari" class="form-control" autofocus placeholder="Masukkan cari pencarian" autocomplete="off" id="cari">
-                        <button class="btn btn-info" type="submit" name="cari" id="tombol-cari">Cari!</button>
+                        <button class="btn btn-info" type="submit" name="cari" id="cari">Cari!</button>
                     </div>
             </form>
         </div>
