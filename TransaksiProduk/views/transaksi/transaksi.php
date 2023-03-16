@@ -46,7 +46,7 @@ if (isset($_POST['cari'])) {
 
         <div>
             <div>
-                <h3>List Produk</h3>
+                <h5>List Produk</h5>
             </div>
             <div class="form-group mt-3">
                 <form action="" method="post">
@@ -60,7 +60,7 @@ if (isset($_POST['cari'])) {
             </div>
 
             <table class="table table-bordered border-primary text-center mt-2">
-                <tr>
+                <tr class="table-warning">
                     <th>No.</th>
                     <th>Nama Produk</th>
                     <th>Kategori</th>
