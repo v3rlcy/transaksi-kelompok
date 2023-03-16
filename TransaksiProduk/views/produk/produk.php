@@ -4,7 +4,7 @@ require '../../function.php';
 
 $produk = query('SELECT * FROM tbproduk');
 
-if(isset($_POST['cari'])){
+if (isset($_POST['cari'])) {
     $produk = filterProduk($_POST['keyword']);
 }
 
@@ -18,24 +18,38 @@ if(isset($_POST['cari'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Product</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
 </head>
 
 <body>
-    <div class="container">
+
+    <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">>
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="../../index.php">JRV Mart</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="views/produk/produk.php">Produk</a>
+                    <a class="nav-link" href="views/transaksi/transaksi.php">Transaksi</a>
+                    <a class="nav-link" href="views/struk/struk.php">Struk</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
         <div class="page-header">
             <h1>Welcome to JRV Mart</h1>
         </div>
-        <h4>List Barang</h4>
+        <h5>List Barang</h5>
 
 
-        <a href="add.php">Add Product</a>
+        <a href="add.php" class="btn btn-primary">Add Product</a>
 
-        <div class="form-group">
+        <div class="form-group mt-3">
             <form action="" method="post">
                 <div class="row">
                     <div class="input-group mb-2">
@@ -45,6 +59,14 @@ if(isset($_POST['cari'])){
                 </div>
             </form>
         </div>
+
+        <tr>
+            <td>
+                <?php echo "Tanggal " . date("Y/m/d") . "<br>"; ?>
+            </td>
+                    
+        </tr>
+
         <table class="table table-bordered border-primary text-center mt-2">
             <tr>
                 <th>No.</th>
@@ -71,15 +93,6 @@ if(isset($_POST['cari'])){
                 </tr>
             <?php endforeach; ?>
         </table>
-
-        <tr>
-            <td>
-                <b>Tanggal</b>
-            </td>
-            <td>
-                <input type="datetime-local" readonly value=<?php echo date("j f y, g:i"); ?> name="tanggal">
-            </td>
-        </tr>
 
     </div>
 </body>
