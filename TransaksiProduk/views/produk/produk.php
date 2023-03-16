@@ -67,7 +67,7 @@ if (isset($_POST['cari'])) {
         </tr>
 
         <table class="table table-bordered border-primary text-center mt-2">
-            <tr>
+            <tr class="table-success">
                 <th>No.</th>
                 <th>Nama Produk</th>
                 <th>Kategori</th>
@@ -87,8 +87,11 @@ if (isset($_POST['cari'])) {
                     <td><?= $row['beratProduk'] ?></td>
                     <td><?= $row['satuan'] ?></td>
                     <td><?= $row['hargaJual'] ?></td>
-                    <td><a href="edit.php?id=<?= $row['idProduk'] ?>" class="btn btn-success">Edit</a></td>
-                    <td><a href="delete.php?id=<?= $row['idProduk'] ?>" class="btn btn-success">Delete</a></td>
+                    <td><?= $row['totalStok'] ?></td>
+                    <td>
+                        <a href="edit.php?id=<?= $row['idProduk'] ?>" class="btn btn-success">Edit</a>
+                        <a href="delete.php?id=<?= $row['idProduk'] ?>" class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>
