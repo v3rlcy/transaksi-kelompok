@@ -24,7 +24,7 @@ if (isset($_POST['cari'])) {
 
 <body>
 
-    <nav class="navbar bg-primary navbar-expand-lg" data-bs-theme="dark">
+    <nav class="navbar bg-success navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="../../index.php">JRV Mart</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@ if (isset($_POST['cari'])) {
         <h5>List Barang</h5>
 
 
-        <a href="add.php" class="btn btn-primary">Add Product</a>
+        <a href="add.php" class="btn btn-warning">Add Product</a>
 
         <div class="form-group mt-3">
             <form action="" method="post">
