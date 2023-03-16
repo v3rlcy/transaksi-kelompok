@@ -24,16 +24,13 @@ if (isset($_POST["submit"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add product</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body>
 
 
-    <div class="container">
+    <div class="container mt-5">
         <div class="page-header">
             <h1>Update Produk</h1>
         </div>
@@ -41,13 +38,23 @@ if (isset($_POST["submit"])) {
 
         <form action="" method="POST">
 
-            <ul>
+            <ul class="mt-3">
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <input type="hidden" value="<?= $produk['idProduk'] ?>" name="idProduk">
                         <div class="checkbox">
-                            <label class="control-label col-sm-2" for="produk">Nama Produk</label>
-                            <input type="text" value="<?= $produk['namaProduk'] ?>" name="namaProduk">
+                            <label class="form-label" for="produk">Nama Produk</label>
+                            <input type="text" value="<?= $produk['namaProduk'] ?>" class="form-control" name="namaProduk">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label class="form-label" for="jual">Harga Jual</label>
+                            <input type="number" name="hargaJual" value="<?= $produk['hargaJual'] ?>"class="form-control">
                         </div>
                     </div>
                 </div>
@@ -55,7 +62,16 @@ if (isset($_POST["submit"])) {
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
-                            <label class="control-label col-sm-2" for="berat">Kategori Produk</label>
+                            <label class="form-label" for="totalStok">Total Stok</label>
+                            <input type="number" name="totalStok" value="<?= $produk['totalStok'] ?>"class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group mt-3" >
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label class="form-label" for="berat">Kategori Produk</label>
                             <select name="kategori" id="kategori">
                                 <option selected value="<?= $produk['kategori'] ?>"><?= $produk['kategori'] ?></option>
                                 <option value="daging">Daging</option>
@@ -66,10 +82,10 @@ if (isset($_POST["submit"])) {
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
-                            <label class="control-label col-sm-2" for="berat">Berat Produk</label>
+                            <label class="form-label" for="berat">Berat Produk</label>
                             <input type="number" name="beratProduk" value="<?= $produk['beratProduk'] ?>">
                             <select name="satuan" id="satuan">
                                 <option value="<?= $produk['satuan'] ?>" selected><?= $produk['satuan'] ?></option>
@@ -79,26 +95,7 @@ if (isset($_POST["submit"])) {
                         </div>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label class="control-label col-sm-2" for="jual">Harga Jual</label>
-                            <input type="number" name="hargaJual" value="<?= $produk['hargaJual'] ?>">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <div class="checkbox">
-                            <label class="control-label col-sm-2" for="totalStok">Total Stok</label>
-                            <input type="number" name="totalStok" value="<?= $produk['totalStok'] ?>">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
+                <div class="form-group mt-3">
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="checkbox">
                             <button type="submit" name="submit" class="btn btn-primary">Update Produk</button>
