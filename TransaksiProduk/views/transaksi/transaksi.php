@@ -1,3 +1,14 @@
+<?php
+
+require '../../function.php';
+
+$produk = query('SELECT * FROM tbproduk');
+
+if (isset($_POST['cari'])) {
+    $produk = filterProduk($_POST['keyword']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,6 +42,70 @@
     <div class="container mt-3">
         <div class="page-header">
             <h1>Welcome to JRV Mart</h1>
+        </div>
+
+        <div>
+            <div>
+                <h3>List Produk</h3>
+            </div>
+            <div class="form-group mt-3">
+                <form action="" method="post">
+                    <div class="row">
+                        <div class="input-group mb-2">
+                            <input type="text" name="keyword" class="form-control" autofocus placeholder="Cari Produk" autocomplete="off" id="keyword">
+                            <button class="btn btn-info" type="submit" name="cari" id="tombol-cari">Cari</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <table class="table table-bordered border-primary text-center mt-2">
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Produk</th>
+                    <th>Kategori</th>
+                    <th>Harga Jual</th>
+                    <th>Aksi</th>
+                </tr>
+
+                <?php foreach ($produk as $row) : ?>
+                    <tr>
+                        <td><?= $row['idProduk'] ?></td>
+                        <td><?= $row['namaProduk'] ?></td>
+                        <td><?= $row['kategori'] ?></td>
+                        <td><?= $row['hargaJual'] ?></td>
+                        <td><a href="" class="btn btn-success">Add To Cart</a></td>
+                    </tr>
+                <?php endforeach; ?>
+                </th>
+            </table>
+        </div>
+        <div>
+            <div>
+                <h4>Kasir</h4>
+                <a href="">Reset Keranjang</a>
+            </div>
+            <div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td><b>Tanggal</b></td>
+                        <td>
+                            <?php echo "Tanggal " . date("j F Y, G:i") . "<br>"; ?>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table table-bordered border-primary text-center mt-2">
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Produk</th>
+                    <th>Jumlah</th>
+                    <th>Total</th>
+                    <th>Aksi</th>
+                </tr>
+
+                </th>
+            </table>
+            </div>
         </div>
     </div>
 
