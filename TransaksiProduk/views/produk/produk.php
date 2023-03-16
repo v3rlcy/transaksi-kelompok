@@ -32,9 +32,9 @@ if (isset($_POST['cari'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="views/produk/produk.php">Produk</a>
-                    <a class="nav-link" href="views/transaksi/transaksi.php">Transaksi</a>
-                    <a class="nav-link" href="views/struk/struk.php">Struk</a>
+                    <a class="nav-link active" aria-current="page" href="#">Produk</a>
+                    <a class="nav-link" href="../transaksi/transaksi.php">Transaksi</a>
+                    <a class="nav-link" href="../struk/struk.php">Struk</a>
                 </div>
             </div>
         </div>
@@ -45,7 +45,6 @@ if (isset($_POST['cari'])) {
             <h1>Welcome to JRV Mart</h1>
         </div>
         <h5>List Barang</h5>
-
 
         <a href="add.php" class="btn btn-warning">Add Product</a>
 
