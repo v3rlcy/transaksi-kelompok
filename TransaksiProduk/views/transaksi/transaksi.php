@@ -26,11 +26,11 @@ if (isset($_POST['cari'])) {
     <nav class="navbar bg-success navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="../../index.php">JRV Mart</a>
-                <div class="navbar-nav">
-                    <a class="nav-link" href="../produk/produk.php">Produk</a>
-                    <a class="nav-link active" aria-current="page" href="#">Transaksi</a>
-                    <a class="nav-link" href="../struk/struk.php">Struk</a>
-                </div>
+            <div class="navbar-nav">
+                <a class="nav-link" href="../produk/produk.php">Produk</a>
+                <a class="nav-link active" aria-current="page" href="#">Transaksi</a>
+                <a class="nav-link" href="../struk/struk.php">Struk</a>
+            </div>
         </div>
     </nav>
 
@@ -76,10 +76,14 @@ if (isset($_POST['cari'])) {
             </table>
         </div>
         <div>
-            <div>
-                <h4>Kasir</h4>
-                <a href="">Reset Keranjang</a>
-            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Kasir</h4>
+                </div>
+                <div class="col d-flex justify-content-end d-inline-block">
+                    <a href="" class="btn btn-danger ml-5">Reset Keranjang</a>
+                </div>
+            </div> <br>
             <div>
                 <table class="table table-bordered">
                     <tr>
@@ -90,16 +94,16 @@ if (isset($_POST['cari'])) {
                     </tr>
                 </table>
                 <table class="table table-bordered border-primary text-center mt-2">
-                <tr>
-                    <th>No.</th>
-                    <th>Nama Produk</th>
-                    <th>Jumlah</th>
-                    <th>Total</th>
-                    <th>Aksi</th>
-                </tr>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nama Produk</th>
+                        <th>Jumlah</th>
+                        <th>Total</th>
+                        <th>Aksi</th>
+                    </tr>
 
-                </th>
-            </table>
+                    </th>
+                </table>
             </div>
         </div>
     </div>
