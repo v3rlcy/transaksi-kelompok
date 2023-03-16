@@ -74,9 +74,9 @@ if (isset($_POST["submit"])) {
                             <label class="form-label" for="berat">Kategori Produk</label>
                             <select name="kategori" id="kategori">
                                 <option selected value="<?= $produk['kategori'] ?>"><?= $produk['kategori'] ?></option>
-                                <option value="daging">Daging</option>
-                                <option value="sayur">Sayur</option>
-                                <option value="buah">Buah</option>
+                                <option value="Daging">Daging</option>
+                                <option value="Sayur">Sayur</option>
+                                <option value="Buah">Buah</option>
                             </select>
                         </div>
                     </div>
@@ -89,8 +89,8 @@ if (isset($_POST["submit"])) {
                             <input type="number" name="beratProduk" value="<?= $produk['beratProduk'] ?>">
                             <select name="satuan" id="satuan">
                                 <option value="<?= $produk['satuan'] ?>" selected><?= $produk['satuan'] ?></option>
-                                <option value="kilogram">KG</option>
-                                <option value="gram">G</option>
+                                <option value="Kilogram">KG</option>
+                                <option value="Gram">G</option>
                             </select>
                         </div>
                     </div>

@@ -67,7 +67,7 @@ if (isset($_POST['cari'])) {
         </tr>
 
         <table class="table table-bordered border-primary text-center mt-2">
-            <tr>
+            <tr class="table-success">
                 <th>No.</th>
                 <th>Nama Produk</th>
                 <th>Kategori</th>
