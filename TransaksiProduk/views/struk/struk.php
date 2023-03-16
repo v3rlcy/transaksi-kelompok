@@ -15,15 +15,10 @@
     <nav class="navbar bg-success navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand text-light" href="../../index.php">JRV Mart</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link" href="../produk/produk.php">Produk</a>
-                    <a class="nav-link" href="../transaksi/transaksi.php">Transaksi</a>
-                    <a class="nav-link active" aria-current="page" href="#">Struk</a>
-                </div>
+            <div class="navbar-nav">
+                <a class="nav-link" href="../produk/produk.php">Produk</a>
+                <a class="nav-link" href="../transaksi/transaksi.php">Transaksi</a>
+                <a class="nav-link active" aria-current="page" href="#">Struk</a>
             </div>
         </div>
     </nav>
