@@ -72,7 +72,7 @@ if (isset($_POST['cari'])) {
             <td><?= $row['kategori'] ?></td>
             <td><?= $row['hargaJual'] ?></td>
             <td><?= $row['totalStok'] ?></td>
-            <td><a href="cart.php?id=<?= $row['idProduk'] ?>&nama=<?= $row['namaProduk'] ?>&jumlah=1&total=<?= $row['hargaJual'] ?>" class="btn btn-success">Add To Cart</a></td>
+            <td><a href="cart.php?id=<?= $row['idProduk'] ?>" class="btn btn-success">Add To Cart</a></td>
           </tr>
         <?php endforeach; ?>
       </table>
@@ -83,7 +83,7 @@ if (isset($_POST['cari'])) {
           <h4>Kasir</h4>
         </div>
         <div class="col d-flex justify-content-end d-inline-block">
-          <a href="" class="btn btn-danger ml-5">Reset Keranjang</a>
+          <a href="clearCart.php" class="btn btn-danger ml-5">Reset Keranjang</a>
         </div>
       </div> <br>
       <div>
@@ -96,7 +96,7 @@ if (isset($_POST['cari'])) {
           </tr>
         </table>
         <table class="table table-bordered border-primary text-center mt-2">
-          
+
           <tr>
             <th>No.</th>
             <th>Nama Produk</th>
