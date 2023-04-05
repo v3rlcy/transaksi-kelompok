@@ -19,8 +19,15 @@ if (!isset($_SESSION['cart'])) { // cek kalau session cartnya ga ada (null)
 
 
     if ($produkArray['idProduk'] == $storedProduk['idProduk']) { // kalau id produk ada yang sama dengan id yang ada di session cart (datanya sama otomatis qty/jumlah dan harga bertambah)
-      $_SESSION['cart'][$key]['jumlahProduk'] += 1; // akses session cart index arraynya terus access array jumlahProduk + 1
-      $_SESSION['cart'][$key]['hargaProduk'] += $produkArray['hargaProduk']; // tambahin harga produknya juga (sama kaya +1 cuman sekarang ambil data hargaProduk)
+      if ($_SESSION['cart'][$key]['jumlahProduk'] >= $produk[0]['totalStok']) {
+        $_SESSION['cart'][$key]['jumlahProduk'] = $produk[0]['totalStok'];
+        $_SESSION['cart'][$key]['hargaProduk'] = $produk[0]['totalStok'] * $produkArray['hargaProduk'];
+        echo "<script>alert('Stok tidak mencukupi!');document.location.href='transaksi.php'</script>";
+        die();
+      } else {
+        $_SESSION['cart'][$key]['jumlahProduk'] += 1; // akses session cart index arraynya terus access array jumlahProduk + 1
+        $_SESSION['cart'][$key]['hargaProduk'] += $produkArray['hargaProduk']; // tambahin harga produknya juga (sama kaya +1 cuman sekarang ambil data hargaProduk)
+      }
     }
   }
 
