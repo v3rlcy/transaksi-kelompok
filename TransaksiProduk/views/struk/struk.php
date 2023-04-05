@@ -1,3 +1,14 @@
+<?php
+session_start();
+require '../../function.php';
+
+$produk = query('SELECT * FROM tbproduk');
+
+if (isset($_POST['cari'])) {
+  $produk = filterProduk($_POST['keyword']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,6 +38,7 @@
         <div class="page-header">
             <h1>Welcome to JRV Mart</h1>
         </div>
+
     </div>
 
 </body>

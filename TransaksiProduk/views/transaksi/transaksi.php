@@ -103,6 +103,8 @@ if (isset($_POST['cari'])) {
             <th>Jumlah</th>
             <th>Total</th>
           </tr>
+
+          <?php if (!empty($_SESSION['cart'])) { ?>
           <?php foreach ($_SESSION['cart'] as $produk) : ?> <!-- karena tadi session cart tadi bentuknya array kita wajib loop -->
             <tr>
               <td><?= $produk['idProduk'] ?></td>
@@ -113,8 +115,10 @@ if (isset($_POST['cari'])) {
           <?php endforeach ?>
         </table>
         <?php if (!empty($_SESSION['cart'])) : ?>
-          <a href="bayar.php">Bayar</a>
+          <a class="btn btn-success" href="bayar.php">Bayar</a>
         <?php endif ?>
+        <?php } ?>
+        
       </div>
     </div>
   </div>
