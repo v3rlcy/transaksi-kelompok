@@ -1,6 +1,7 @@
 <?php
-
+session_start();
 require '../../function.php';
+
 
 $produk = query('SELECT * FROM tbproduk');
 
@@ -74,7 +75,6 @@ if (isset($_POST['cari'])) {
             <td><a href="cart.php?id=<?= $row['idProduk'] ?>&nama=<?= $row['namaProduk'] ?>&jumlah=1&total=<?= $row['hargaJual'] ?>" class="btn btn-success">Add To Cart</a></td>
           </tr>
         <?php endforeach; ?>
-        </th>
       </table>
     </div>
     <div>
@@ -96,15 +96,20 @@ if (isset($_POST['cari'])) {
           </tr>
         </table>
         <table class="table table-bordered border-primary text-center mt-2">
+          
           <tr>
             <th>No.</th>
             <th>Nama Produk</th>
             <th>Jumlah</th>
             <th>Total</th>
-            <th>Aksi</th>
+          </tr>
+          <tr>
+            <td><?= $_SESSION['idProduk'] ?></td>
+            <td><?= $_SESSION['namaProduk'] ?></td>
+            <td><?= $_SESSION['jumlah'] ?></td>
+            <td><?= $_SESSION['total'] ?></td>
           </tr>
 
-          </th>
         </table>
       </div>
     </div>
