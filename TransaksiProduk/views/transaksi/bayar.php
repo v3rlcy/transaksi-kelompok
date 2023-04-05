@@ -28,7 +28,7 @@ if (isset($_POST['prosesBayar'])) {
 
 <body>
   <div class="container mt-5">
-    <h2>Pembayaran</h2>
+    <h1 class="mt-5">Pembayaran</h2>
     <form action="" method="post">
       <table class="table table-bordered border-primary text-center mt-2">
         <tr class="table-success">
