@@ -103,14 +103,18 @@ if (isset($_POST['cari'])) {
             <th>Jumlah</th>
             <th>Total</th>
           </tr>
-          <tr>
-            <td><?= $_SESSION['idProduk'] ?></td>
-            <td><?= $_SESSION['namaProduk'] ?></td>
-            <td><?= $_SESSION['jumlah'] ?></td>
-            <td><?= $_SESSION['total'] ?></td>
-          </tr>
-
+          <?php foreach ($_SESSION['cart'] as $produk) : ?> <!-- karena tadi session cart tadi bentuknya array kita wajib loop -->
+            <tr>
+              <td><?= $produk['idProduk'] ?></td>
+              <td><?= $produk['namaProduk'] ?></td>
+              <td><?= $produk['jumlahProduk'] ?></td>
+              <td><?= $produk['hargaProduk'] ?></td>
+            </tr>
+          <?php endforeach ?>
         </table>
+        <?php if (!empty($_SESSION['cart'])) : ?>
+          <a href="bayar.php">Bayar</a>
+        <?php endif ?>
       </div>
     </div>
   </div>
