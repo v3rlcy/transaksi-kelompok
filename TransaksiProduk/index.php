@@ -17,7 +17,7 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="views/produk/produk.php">Produk</a>
                 <a class="nav-link" href="views/transaksi/transaksi.php">Transaksi</a>
-                <a class="nav-link" href="views/struk/struk.php">Struk</a>
+                <a class="nav-link" href="views/struk/struk.php">Riwayat Transaksi</a>
             </div>
         </div>
     </nav>

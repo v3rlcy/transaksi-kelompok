@@ -30,7 +30,7 @@ if (isset($_POST['cari'])) {
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="#">Produk</a>
         <a class="nav-link" href="../transaksi/transaksi.php">Transaksi</a>
-        <a class="nav-link" href="../struk/struk.php">Struk</a>
+        <a class="nav-link" href="../struk/struk.php">Riwayat Transaksi</a>
       </div>
     </div>
   </nav>
