@@ -34,7 +34,7 @@
                     <p class="card-text">Lihat produk kami disini!</p>
                     <a href="views/produk/produk.php" class="btn btn-primary">Tekan</a>
                 </div>
-            </div>git
+            </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Transaksi</h5>
