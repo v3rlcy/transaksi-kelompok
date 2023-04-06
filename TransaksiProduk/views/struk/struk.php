@@ -35,8 +35,8 @@ $struk = query("SELECT tbtransaksi.idTransaksi, tbtransaksi.waktuTransaksi, tbpr
             <h1>Welcome to JRV Mart</h1>
         </div>
 
-        <table border="1" style="width:100%">
-            <tr>
+        <table class="table table-bordered">
+            <tr class="table table-warning">
                 <td>ID Pembayaran</td>
                 <td>Waktu Pembayaran</td>
                 <td>Nama Produk</td>
@@ -56,11 +56,8 @@ $struk = query("SELECT tbtransaksi.idTransaksi, tbtransaksi.waktuTransaksi, tbpr
                     <td>Rp. <?= $row['totalTransaksi'] ?></td>
                     <td>Rp. <?= $row['totalPembayaran'] ?></td>
                     <td>Rp. <?= $row['totalPengembalian'] ?></td>
-                    <td></td>
                 </tr>
             <?php endforeach; ?>
-
-
 
         </table>
 
