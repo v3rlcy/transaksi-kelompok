@@ -34,7 +34,7 @@
                     <p class="card-text">Lihat produk kami disini!</p>
                     <a href="views/produk/produk.php" class="btn btn-primary">Tekan</a>
                 </div>
-            </div>
+            </div>git
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Transaksi</h5>
@@ -44,7 +44,7 @@
             </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Struk</h5>
+                    <h5 class="card-title">Riwayat Transaksi</h5>
                     <p class="card-text">Lihat riwayat belanja disini!</p>
                     <a href="views/struk/struk.php" class="btn btn-primary">Tekan</a>
                 </div>
