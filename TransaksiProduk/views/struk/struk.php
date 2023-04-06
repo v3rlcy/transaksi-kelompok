@@ -2,11 +2,7 @@
 session_start();
 require '../../function.php';
 
-$produk = query('SELECT * FROM tbproduk');
-
-if (isset($_POST['cari'])) {
-  $produk = filterProduk($_POST['keyword']);
-}
+$struk = query("SELECT tbproduk.namaProduk, tbtransaksidetil.qty, tbtransaksi.totalTransaksi, tbtransaksi.totalPembayaran, tbtransaksi.totalPengembalian FROM `tbtransaksidetil` INNER JOIN tbproduk ON tbtransaksidetil.idProduk = tbproduk.idProduk INNER JOIN tbtransaksi ON tbtransaksidetil.id = tbtransaksi.idTransaksi WHERE tbtransaksidetil.id = id");
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +34,31 @@ if (isset($_POST['cari'])) {
         <div class="page-header">
             <h1>Welcome to JRV Mart</h1>
         </div>
+
+        <table border="1" style="width:100%">
+            <tr>
+                <td>Nama Produk</td>
+                <td>qty</td>
+                <td>Total Transaksi</td>
+                <td>Total Pembayaran</td>
+                <td>Total Pengembalian</td>
+            </tr>
+
+            <?php
+            foreach ($struk as $row) : ?>
+                <tr>
+                    <td><?= ['namaProduk'] ?></td>
+                    <td><?= ['qty'] ?>x</td>
+                    <td>Rp. <?= ['totalTransaksi'] ?></td>
+                    <td>Rp. <?= ['totalPembayaran'] ?></td>
+                    <td>Rp. <?= ['totalPengembalian'] ?></td>
+                    <td></td>
+                </tr>
+            <?php endforeach; ?>
+
+
+
+        </table>
 
     </div>
 

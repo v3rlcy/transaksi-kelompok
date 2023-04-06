@@ -9,7 +9,7 @@ if (isset($_POST['prosesBayar'])) {
     echo "<script>alert('Pembayaran kurang!')</script>";
   } else {
     addTransaksi($_POST);
-    header("Location: transaksi.php");
+    header("Location: ../struk/struk.php");
   }
 }
 
